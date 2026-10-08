@@ -10,13 +10,7 @@ class Stock(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
  
-class Gold(models.Model):
-    date = models.DateField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    volume = models.BigIntegerField()
-
-    def __str__(self):
-        return f"{self.date} - {self.price}"    
+  
 
 class PriceData(models.Model):
     stock = models.ForeignKey(Stock, on_delete=models.CASCADE, related_name='price_data')
